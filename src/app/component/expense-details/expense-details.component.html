@@ -1,0 +1,18 @@
+<div class="container">
+    <form #expenseForm="ngForm" (ngSubmit)="!expenseForm.invalid && saveExpense()">
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" class="form-control" id="name" name="name" #name="ngModel"
+            [(ngModel)]="expense.name"
+            required minlength=5 />
+            <small class="form-text text-err" *ngIf="name.dirty && name.invalid">Name is required and must have at least 5 characters!</small>
+        </div>
+
+        <div>
+            <label for="amount">Amount: </label>
+            <input type="number" class="form-control" id="amount" name="amount" #amount="ngModel"
+            [(ngModel)]="expense.amount" required/>
+            <small class="form-text text-err" *ngIf="amount.dirty && amount.invalid">Amount is required!</small>
+        </div>
+    </form>
+</div>

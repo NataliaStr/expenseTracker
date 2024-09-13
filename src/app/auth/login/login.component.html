@@ -1,0 +1,16 @@
+<div class="container">
+    <!-- <app-message-banner showBanner()></app-message-banner> -->
+    <form #login="ngForm" (ngSubmit)="!login.invalid && handleLogin()">
+        <fieldset class="form-group">
+            <label>Username: </label>
+            <input type="text" [(ngModel)]='username' class="form-control" name="username" required='required' minlength=5/>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>Password: </label>
+            <input type="password" [(ngModel)]='password' class="form-control" name="password" required='required' minlength=5/>
+        </fieldset>
+
+        <button type="submit" class="btn btn-success">Login</button>
+    </form>
+</div>
